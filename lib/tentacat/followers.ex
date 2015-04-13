@@ -25,8 +25,8 @@ defmodule Tentacat.Users.Followers do
 
   More info at: http://developer.github.com/v3/users/followers/#list-users-followed-by-another-user
   """
-  def following(user_name, client) do
-    get "users/#{user_name}/following", client.auth
+  def following(user_name, client, page \\ 1) do
+    get "users/#{user_name}/following", client.auth, page: page
   end
 
   @doc """
@@ -52,8 +52,8 @@ defmodule Tentacat.Users.Followers do
 
   More info at: http://developer.github.com/v3/users/followers/#list-followers-of-a-user
   """
-  def followers(user_name, client) do
-    get "users/#{user_name}/followers", client.auth
+  def followers(user_name, client, page \\ 1) do
+    get "users/#{user_name}/followers", client.auth, page: page
   end
 
   @doc """
